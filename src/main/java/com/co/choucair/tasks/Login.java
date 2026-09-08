@@ -1,6 +1,6 @@
 package com.co.choucair.tasks;
 
-import com.co.choucair.models.UserLoombokData;
+import com.co.choucair.models.SaucedemoLoginTest;
 import com.co.choucair.userinterfaces.SerenityLoginPage;
 import net.serenitybdd.core.steps.Instrumented;
 import net.serenitybdd.screenplay.Actor;
@@ -14,9 +14,9 @@ import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisi
 
 public class Login implements Task {
 
-    UserLoombokData userLoombokData;
+    SaucedemoLoginTest userLoombokData;
 
-    public Login(UserLoombokData userLoombokData) {
+    public Login(SaucedemoLoginTest userLoombokData) {
         this.userLoombokData = userLoombokData;
     }
 
@@ -31,7 +31,7 @@ public class Login implements Task {
         );
     }
 
-    public static Login onTheSite(UserLoombokData userLoombokData){
+    public static Login onTheSite(SaucedemoLoginTest userLoombokData){
         return Instrumented.instanceOf(Login.class).withProperties(userLoombokData);
     }
 }
