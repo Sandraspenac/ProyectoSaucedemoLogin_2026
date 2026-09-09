@@ -11,12 +11,12 @@ import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public class SaucedemoLoginTest implements Task {
 
-    private final String usuario;
+    private final String username;
     private final String password;
 
     // Constructor
-    public SaucedemoLoginTest(String usuario, String password) {
-        this.usuario = usuario;
+    public SaucedemoLoginTest(String username, String password) {
+        this.username = username;
         this.password = password;
     }
 
@@ -36,7 +36,7 @@ public class SaucedemoLoginTest implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Enter.theValue(usuario).into(TXT_USER),
+                Enter.theValue(u).into(TXT_USER),
                 Enter.theValue(password).into(TXT_PASS),
                 Click.on(BTN_LOGIN)
         );

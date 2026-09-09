@@ -1,9 +1,6 @@
-package com.co.choucair.models;
 import io.cucumber.datatable.DataTable;
 
-import java.util.List;
 import java.util.Map;
-
 
 public class SaucedemoLoginTest {
 
@@ -11,20 +8,7 @@ public class SaucedemoLoginTest {
 
     private String pass;
 
-
-
-
-    public static setData(DataTable dataTable){
-        List<Map<String,String>> data = dataTable.asMaps(String.class, String.class);
-
-        String user = data.get(0).get("user");
-        String pass = data.get(0).get("pass");
-            }
-
-
-    public SaucedemoLoginTest() {
-
-    }
+// Constructor
 
     public SaucedemoLoginTest(String user, String pass) {
 
@@ -34,11 +18,29 @@ public class SaucedemoLoginTest {
 
     }
 
+// Método para obtener los datos del DataTable
+
+    public static SaucedemoLoginTest setData(DataTable dataTable) {
+
+        Map<String, String> row =
+
+        dataTable.asMaps(String.class, String.class).get(0);
+
+        return new SaucedemoLoginTest(
+
+                row.get("user"),
+
+                row.get("pass")
+
+        );
+
+    }
+
+// Getters y Setters
+
     public String getUser() {
 
         return user;
-
-    }
 
     public void setUser(String user) {
 

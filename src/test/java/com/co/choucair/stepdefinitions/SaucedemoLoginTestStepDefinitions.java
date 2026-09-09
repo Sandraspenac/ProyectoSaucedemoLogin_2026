@@ -43,15 +43,17 @@ public class SaucedemoLoginTestStepDefinitions {
 
     @When("Usuario se autentica")
     public void usuarioSeAutentica(DataTable dataTable) {
-        List<Map<String, String>> data = dataTable.asMaps(String.class, String.class);
-        String user = data.get(0).get("user");
-        String pass = data.get(0).get("pass");
 
+        List<Map<String, String>> data = dataTable.asMaps(String.class, String.class);
+        Map<String, String> row = data.get(0);
+        String user = row.get("user");
+        String pass = row.get("pass");
+        
                 System.out.println(user);
                 System.out.println(pass);
 
         OnStage.theActorInTheSpotlight().attemptsTo(
-                SaucedemoLoginTest.saucedemoLoginTest(user, pass)
+                SaucedemoLoginTest.clone(user, pass)
 
         );
     }
