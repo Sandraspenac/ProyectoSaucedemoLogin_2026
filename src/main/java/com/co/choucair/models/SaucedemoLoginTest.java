@@ -2,7 +2,7 @@ import io.cucumber.datatable.DataTable;
 
 import java.util.Map;
 
-public class SaucedemoLoginTest {
+public class SaucedemoLoginTest implements Task {
 
     private String user;
 
@@ -41,6 +41,7 @@ public class SaucedemoLoginTest {
     public String getUser() {
 
         return user;
+    }
 
     public void setUser(String user) {
 

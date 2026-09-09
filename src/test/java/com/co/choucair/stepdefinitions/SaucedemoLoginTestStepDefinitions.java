@@ -46,6 +46,7 @@ public class SaucedemoLoginTestStepDefinitions {
 
         List<Map<String, String>> data = dataTable.asMaps(String.class, String.class);
         Map<String, String> row = data.get(0);
+
         String user = row.get("user");
         String pass = row.get("pass");
         

@@ -39,7 +39,7 @@ public class SaucedemoLoginTest implements Task {
 
     @Override
 
-    public <T extends Actor> void performAs(T actor) {
+        public <T extends Actor> void performAs(T actor) {
 
         actor.attemptsTo(
 

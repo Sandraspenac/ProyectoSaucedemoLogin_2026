@@ -1,5 +1,6 @@
 package com.co.choucair.tasks;
 
+import com.co.choucair.interactions.SaucedemoLoginTest;
 import com.co.choucair.models.SaucedemoLoginTest;
 import com.co.choucair.userinterfaces.SerenityLoginPage;
 import net.serenitybdd.core.steps.Instrumented;
@@ -9,6 +10,7 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.JavaScriptClick;
 import net.serenitybdd.screenplay.waits.WaitUntil;
+
 
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 

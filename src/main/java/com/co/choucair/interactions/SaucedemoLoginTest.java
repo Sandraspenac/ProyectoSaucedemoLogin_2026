@@ -20,7 +20,7 @@ public class SaucedemoLoginTest implements Task {
         this.password = password;
     }
 
-    public static SaucedemoLoginTest conCredenciales(String username, String password) {
+    public static SaucedemoLoginTest Credenciales(String username, String password) {
         return instrumented(SaucedemoLoginTest.class, username, password);
     }
 
@@ -36,7 +36,7 @@ public class SaucedemoLoginTest implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Enter.theValue(u).into(TXT_USER),
+                Enter.theValue(username).into(TXT_USER),
                 Enter.theValue(password).into(TXT_PASS),
                 Click.on(BTN_LOGIN)
         );
