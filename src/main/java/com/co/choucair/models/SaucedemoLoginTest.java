@@ -21,13 +21,13 @@ public class SaucedemoLoginTest implements Task {
 
     }
 
-    public static SaucedemoLoginTest setData(DataTable dataTable) {
+    public static SaucedemoLoginTest saucedemoLoginTest(DataTable dataTable) {
 
         Map<String, String> row =
 
         dataTable.asMaps(String.class, String.class).get(0);
 
-        return new SaucedemoLoginTest(
+        return new saucedemoLoginTest(
 
                 row.get("user"),
 

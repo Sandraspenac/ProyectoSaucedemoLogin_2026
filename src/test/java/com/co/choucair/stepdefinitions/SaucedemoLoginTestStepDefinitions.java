@@ -47,19 +47,16 @@ public class SaucedemoLoginTestStepDefinitions {
         List<Map<String, String>> data = dataTable.asMaps(String.class, String.class);
         Map<String, String> row = data.get(0);
 
-        String username = row.get("username");
-        String password = row.get("password");
+        String username = row.get("user");
+        String password = row.get("pass");
 
                 System.out.println(username);
                 System.out.println(password);
 
         OnStage.theActorInTheSpotlight().attemptsTo(
-                SaucedemoLoginTest.saucedemoLoginStep(toString(username), toString(password))
+                SaucedemoLoginTest.saucedemoLoginTest(username,password)
 
         );
-    }
-
-    private Object toString(String username) {
     }
 
 

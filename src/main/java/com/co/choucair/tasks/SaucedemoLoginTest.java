@@ -6,11 +6,14 @@ import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.JavaScriptClick;
+import net.serenitybdd.screenplay.targets.Target;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 public class SaucedemoLoginTest implements Task {
 
+    private static final String TXT_USER = "standard_user" ;
+    private static final String TXT_PASSWORD = "standard_user";
     private final UserLoombokData userLoombokData;
 
     public SaucedemoLoginTest(UserLoombokData userLoombokData) {
@@ -18,14 +21,9 @@ public class SaucedemoLoginTest implements Task {
         this.userLoombokData = userLoombokData;
     }
 
-    public static Performable SaucedemoLoginStep() {
-        return SaucedemoLoginStep(null, null);
-    }
-
-    public static Performable SaucedemoLoginStep(String username, String password) {
+    public static Performable SaucedemoLoginTest(String username, String password) {
         return null;
     }
-
 
     public <T extends Actor> void performAs() {
         performAs((T) null);
@@ -37,15 +35,14 @@ public class SaucedemoLoginTest implements Task {
 
         actor.attemptsTo(
 
-                WaitUntil.the(SerenityLoginPage.TXT_USER, isVisible())
+                WaitUntil.the(TXT_USER, isVisible())
                         .forNoMoreThan(30).seconds(),
                 Enter.theValue(userLoombokData.getUser())
-                        .into(SerenityLoginPage.TXT_USER),
+                        .into(TXT_USER),
 
-                JavaScriptClick.on(SerenityLoginPage.BTN_SUBMIT),
-                WaitUntil.the(SerenityLoginPage.TXT_VALIDATION, isVisible())
-
+                WaitUntil.the(TXT_PASSWORD, isVisible())
                         .forNoMoreThan(30).seconds()
+
 
         );
 

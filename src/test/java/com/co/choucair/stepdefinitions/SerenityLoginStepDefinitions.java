@@ -3,7 +3,6 @@ package com.co.choucair.stepdefinitions;
 
 import com.co.choucair.questions.ValidateText;
 import com.co.choucair.tasks.Login;
-import com.co.choucair.userinterfaces.SerenityLoginPage;
 import com.co.choucair.utils.KillBrowser;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.After;
@@ -20,6 +19,7 @@ import java.io.IOException;
 import java.util.List;
 
 
+import static com.co.choucair.userinterfaces.SerenityLoginPage.*;
 import static com.co.choucair.userinterfaces.SerenityLoginPage.TXT_VALIDATION;
 import static com.co.choucair.utils.GlobalData.*;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
