@@ -41,6 +41,15 @@ public class SaucedemoLoginTest implements Task {
                 Click.on(BTN_LOGIN)
         );
     }
+
+    public CharSequence getPass() {
+        return null;
+    }
+
+    public CharSequence getUser() {
+        return null;
+    }
+
 }
 
 

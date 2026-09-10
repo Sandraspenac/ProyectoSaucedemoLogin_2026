@@ -1,7 +1,6 @@
 package com.co.choucair.tasks;
 
 import com.co.choucair.interactions.SaucedemoLoginTest;
-import com.co.choucair.models.SaucedemoLoginTest;
 import com.co.choucair.userinterfaces.SerenityLoginPage;
 import net.serenitybdd.core.steps.Instrumented;
 import net.serenitybdd.screenplay.Actor;
@@ -33,7 +32,7 @@ public class Login implements Task {
         );
     }
 
-    public static Login onTheSite(SaucedemoLoginTest userLoombokData){
+    public static Login onTheSite(SerenityLoginPage userLoombokData){
         return Instrumented.instanceOf(Login.class).withProperties(userLoombokData);
     }
 }

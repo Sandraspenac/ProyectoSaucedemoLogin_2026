@@ -1,8 +1,9 @@
 package com.co.choucair.stepdefinitions;
 
-import com.co.choucair.models.SaucedemoLoginTest;
+
 import com.co.choucair.questions.ValidateText;
 import com.co.choucair.tasks.Login;
+import com.co.choucair.userinterfaces.SerenityLoginPage;
 import com.co.choucair.utils.KillBrowser;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.After;
@@ -18,7 +19,7 @@ import net.thucydides.core.webdriver.SerenityWebdriverManager;
 import java.io.IOException;
 import java.util.List;
 
-import static com.co.choucair.models.SaucedemoLoginTest.*;
+
 import static com.co.choucair.userinterfaces.SerenityLoginPage.TXT_VALIDATION;
 import static com.co.choucair.utils.GlobalData.*;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
@@ -45,7 +46,7 @@ public class SerenityLoginStepDefinitions {
     @When("attempts to log in")
     public void attemptsToLogIn(DataTable dataTable) {
         OnStage.theActorInTheSpotlight().attemptsTo(
-                Login.onTheSite(SaucedemoLoginTest.setData(dataTable).get(0))
+                Login.onTheSite(SerenityLoginPage.setData(dataTable).get(0))
         );
     }
 

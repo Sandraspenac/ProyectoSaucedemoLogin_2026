@@ -1,5 +1,10 @@
 import io.cucumber.datatable.DataTable;
 
+import net.serenitybdd.screenplay.Actor;
+
+import net.serenitybdd.screenplay.Task;
+
+
 import java.util.Map;
 
 public class SaucedemoLoginTest implements Task {
@@ -8,8 +13,6 @@ public class SaucedemoLoginTest implements Task {
 
     private String pass;
 
-// Constructor
-
     public SaucedemoLoginTest(String user, String pass) {
 
         this.user = user;
@@ -17,8 +20,6 @@ public class SaucedemoLoginTest implements Task {
         this.pass = pass;
 
     }
-
-// Método para obtener los datos del DataTable
 
     public static SaucedemoLoginTest setData(DataTable dataTable) {
 
@@ -36,22 +37,29 @@ public class SaucedemoLoginTest implements Task {
 
     }
 
-// Getters y Setters
+    @Override
+
+    public <T extends Actor> void performAs(T actor) {
+
+// Aquí va la lógica del login
+
+    }
 
     public String getUser() {
 
         return user;
-    }
-
-    public void setUser(String user) {
-
-        this.user = user;
 
     }
 
     public String getPass() {
 
         return pass;
+
+    }
+
+    public void setUser(String user) {
+
+        this.user = user;
 
     }
 

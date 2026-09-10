@@ -47,17 +47,21 @@ public class SaucedemoLoginTestStepDefinitions {
         List<Map<String, String>> data = dataTable.asMaps(String.class, String.class);
         Map<String, String> row = data.get(0);
 
-        String user = row.get("user");
-        String pass = row.get("pass");
-        
-                System.out.println(user);
-                System.out.println(pass);
+        String username = row.get("username");
+        String password = row.get("password");
+
+                System.out.println(username);
+                System.out.println(password);
 
         OnStage.theActorInTheSpotlight().attemptsTo(
-                SaucedemoLoginTest.clone(user, pass)
+                SaucedemoLoginTest.saucedemoLoginStep(toString(username), toString(password))
 
         );
     }
+
+    private Object toString(String username) {
+    }
+
 
 
     @Then("Valida el titulo  Swag Labs Products")

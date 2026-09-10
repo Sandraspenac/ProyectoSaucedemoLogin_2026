@@ -1,53 +1,51 @@
 package com.co.choucair.tasks;
-
+import com.co.choucair.models.UserLoombokData;
+import com.co.choucair.userinterfaces.SerenityLoginPage;
 import net.serenitybdd.screenplay.Actor;
+import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
-import static net.serenitybdd.screenplay.Tasks.instrumented;
-import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
-
+import net.serenitybdd.screenplay.actions.JavaScriptClick;
+import net.serenitybdd.screenplay.waits.WaitUntil;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 public class SaucedemoLoginTest implements Task {
-    private final String username;
 
-    private final String password;
+    private final UserLoombokData userLoombokData;
 
+    public SaucedemoLoginTest(UserLoombokData userLoombokData) {
 
+        this.userLoombokData = userLoombokData;
+    }
 
-    public SaucedemoLoginTest(String username, String password) {
+    public static Performable SaucedemoLoginStep() {
+        return SaucedemoLoginStep(null, null);
+    }
 
-        this.username = username;
-
-        this.password = password;
-
+    public static Performable SaucedemoLoginStep(String username, String password) {
+        return null;
     }
 
 
-    public static SaucedemoLoginTest conCredenciales(String username, String password)
-    {
-        return instrumented(
-
-                SaucedemoLoginTest.class,
-
-                username,
-
-                password
-
-        );
-
+    public <T extends Actor> void performAs() {
+        performAs((T) null);
     }
 
     @Override
 
-        public <T extends Actor> void performAs(T actor) {
+    public <T extends Actor> void performAs(T actor) {
 
         actor.attemptsTo(
 
-                Enter.theValue("standard_user").into("#user-name"),
+                WaitUntil.the(SerenityLoginPage.TXT_USER, isVisible())
+                        .forNoMoreThan(30).seconds(),
+                Enter.theValue(userLoombokData.getUser())
+                        .into(SerenityLoginPage.TXT_USER),
 
-                Enter.theValue("secret_sauce").into("#password"),
+                JavaScriptClick.on(SerenityLoginPage.BTN_SUBMIT),
+                WaitUntil.the(SerenityLoginPage.TXT_VALIDATION, isVisible())
 
-                Click.on("#login-button")
+                        .forNoMoreThan(30).seconds()
 
         );
 
