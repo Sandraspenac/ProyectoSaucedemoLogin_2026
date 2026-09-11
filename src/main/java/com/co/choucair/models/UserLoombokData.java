@@ -13,8 +13,8 @@ import java.util.Map;
 @Getter
 public class UserLoombokData {
 
-    String user;
-    String pass;
+    String username;
+    String password;
 
     public static List<UserLoombokData> setData(DataTable table){
         List<UserLoombokData> data = new ArrayList<>();
@@ -25,4 +25,6 @@ public class UserLoombokData {
         return data;
     }
 
+    public CharSequence getUser() {
+    }
 }

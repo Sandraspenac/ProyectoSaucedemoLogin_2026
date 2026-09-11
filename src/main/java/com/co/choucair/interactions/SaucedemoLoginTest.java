@@ -1,5 +1,6 @@
 package com.co.choucair.interactions;
 
+
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
@@ -8,6 +9,7 @@ import net.serenitybdd.screenplay.targets.Target;
 import org.openqa.selenium.By;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
+import com.co.choucair.interactions.SaucedemoLoginTest;
 
 public class SaucedemoLoginTest implements Task {
 
@@ -20,17 +22,19 @@ public class SaucedemoLoginTest implements Task {
         this.password = password;
     }
 
-    public static SaucedemoLoginTest Credenciales(String username, String password) {
+    public static SaucedemoLoginTest login(String username, String password) {
         return instrumented(SaucedemoLoginTest.class, username, password);
     }
 
     // Definición de los Targets
-    public static final Target TXT_USER = Target.the("campo usuario")
-            .located(By.id("#user-name//*[@id=\"login-button\"]"));
-    public static final Target TXT_PASS = Target.the("campo contraseña")
-            .located(By.id("//*[@id=\"password\"]"));
-    public static final Target BTN_LOGIN = Target.the("botón login")
-            .located(By.id("//*[@id=\"login-button\"]"));
+
+        public static final Target TXT_USER = Target.the("txtuser")
+                .located(By.id("LoginPanel0_Username"));
+        public static final Target TXT_PASS = Target.the("txtpass")
+                .located(By.xpath("//input[@id='LoginPanel0_Password']"));
+        public static final Target BTN_LOGIN = Target.the("txt")
+                .located(By.xpath("//button[@id='LoginPanel0_LoginButton']"));
+
 
 
     @Override

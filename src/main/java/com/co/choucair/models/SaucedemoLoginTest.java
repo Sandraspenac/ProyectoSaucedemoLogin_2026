@@ -29,9 +29,9 @@ public class SaucedemoLoginTest implements Task {
 
         return new saucedemoLoginTest(
 
-                row.get("user"),
+                row.get("username"),
 
-                row.get("pass")
+                row.get("password")
 
         );
 

@@ -5,9 +5,7 @@ import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import net.serenitybdd.screenplay.Performable;
-import net.serenitybdd.screenplay.Task;
-
+import com.co.choucair.interactions.SaucedemoLoginTest;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 
@@ -54,7 +52,7 @@ public class SaucedemoLoginTestStepDefinitions {
                 System.out.println(password);
 
         OnStage.theActorInTheSpotlight().attemptsTo(
-                SaucedemoLoginTest.saucedemoLoginTest(username,password)
+                SaucedemoLoginTest.login(username,password)
 
         );
     }

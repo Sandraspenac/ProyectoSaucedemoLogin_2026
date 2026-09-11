@@ -17,7 +17,6 @@ public class SaucedemoLoginTest implements Task {
     private final UserLoombokData userLoombokData;
 
     public SaucedemoLoginTest(UserLoombokData userLoombokData) {
-
         this.userLoombokData = userLoombokData;
     }
 
@@ -42,6 +41,7 @@ public class SaucedemoLoginTest implements Task {
 
                 WaitUntil.the(TXT_PASSWORD, isVisible())
                         .forNoMoreThan(30).seconds()
+
 
 
         );
