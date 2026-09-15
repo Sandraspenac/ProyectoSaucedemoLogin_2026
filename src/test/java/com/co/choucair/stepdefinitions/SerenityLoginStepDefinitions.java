@@ -1,8 +1,9 @@
 package com.co.choucair.stepdefinitions;
 
-
+import com.co.choucair.models.UserLoombokData;
 import com.co.choucair.questions.ValidateText;
 import com.co.choucair.tasks.Login;
+import com.co.choucair.userinterfaces.SerenityLoginPage;
 import com.co.choucair.utils.KillBrowser;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.After;
@@ -10,6 +11,7 @@ import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
+import net.serenitybdd.screenplay.Consequence;
 import net.serenitybdd.screenplay.actions.Open;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
@@ -40,7 +42,8 @@ public class SerenityLoginStepDefinitions {
 
     @Given("the user is on the serenity demo page")
     public void theUserIsOnTheSerenityDemoPage() {
-        OnStage.theActorCalled(ACTOR).wasAbleTo(Open.url(URL));
+        OnStage.theActorCalled(ACTOR).wasAbleTo(Open.url(URL)
+        );
     }
 
     @When("attempts to log in")
@@ -50,10 +53,24 @@ public class SerenityLoginStepDefinitions {
         );
     }
 
-    @Then("^validate the text on screen (.*)$")
+    @Then("^validate the text on screen \"([^\"]*)\"$")
     public void validateTheTextOnScreenDashboard(String text) {
-        OnStage.theActorInTheSpotlight().should(seeThat(ValidateText.of(TXT_VALIDATION), containsString(text)));
+
+        OnStage.theActorInTheSpotlight().should(
+
+                seeThat(
+
+                        ValidateText.of(TXT_VALIDATION),
+
+                        containsString(text)
+
+                )
+
+        );
 
     }
+    }
 
-}
+
+
+

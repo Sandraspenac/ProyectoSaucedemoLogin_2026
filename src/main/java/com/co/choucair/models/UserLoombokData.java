@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+
 @Setter
 @Getter
 public class UserLoombokData {
@@ -26,5 +27,6 @@ public class UserLoombokData {
     }
 
     public CharSequence getUser() {
+        return null;
     }
 }

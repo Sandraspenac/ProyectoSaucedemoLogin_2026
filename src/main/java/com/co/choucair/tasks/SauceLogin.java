@@ -1,34 +1,30 @@
 package com.co.choucair.tasks;
+
 import com.co.choucair.models.UserLoombokData;
-import com.co.choucair.userinterfaces.SerenityLoginPage;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
-import net.serenitybdd.screenplay.Task;
+import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Enter;
-import net.serenitybdd.screenplay.actions.JavaScriptClick;
-import net.serenitybdd.screenplay.targets.Target;
 import net.serenitybdd.screenplay.waits.WaitUntil;
+
+
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
-public class SaucedemoLoginTest implements Task {
-
+public class SauceLogin extends Tasks   {
     private static final String TXT_USER = "standard_user" ;
     private static final String TXT_PASSWORD = "standard_user";
     private final UserLoombokData userLoombokData;
 
-    public SaucedemoLoginTest(UserLoombokData userLoombokData) {
-        this.userLoombokData = userLoombokData;
-    }
 
-    public static Performable SaucedemoLoginTest(String username, String password) {
+    public static Performable login() {
         return null;
     }
 
-    public <T extends Actor> void performAs() {
-        performAs((T) null);
+    public SauceLogin(UserLoombokData userLoombokData) {
+        this.userLoombokData = userLoombokData;
     }
 
-    @Override
+
 
     public <T extends Actor> void performAs(T actor) {
 
@@ -47,5 +43,4 @@ public class SaucedemoLoginTest implements Task {
         );
 
     }
-
 }

@@ -25,9 +25,10 @@ public class SaucedemoLoginTest implements Task {
 
         Map<String, String> row =
 
-        dataTable.asMaps(String.class, String.class).get(0);
+                dataTable.asMaps(String.class, String.class).get(0);
 
-        return new saucedemoLoginTest(
+
+        return new SaucedemoLoginTest(
 
                 row.get("username"),
 

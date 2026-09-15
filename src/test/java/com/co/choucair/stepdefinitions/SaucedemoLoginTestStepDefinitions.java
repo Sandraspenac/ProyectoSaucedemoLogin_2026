@@ -1,11 +1,12 @@
 package com.co.choucair.stepdefinitions;
 import com.co.choucair.questions.DashboardTitle;
+import com.co.choucair.tasks.SauceLogin;
+
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import com.co.choucair.interactions.SaucedemoLoginTest;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 
@@ -51,10 +52,7 @@ public class SaucedemoLoginTestStepDefinitions {
                 System.out.println(username);
                 System.out.println(password);
 
-        OnStage.theActorInTheSpotlight().attemptsTo(
-                SaucedemoLoginTest.login(username,password)
-
-        );
+        OnStage.theActorInTheSpotlight().attemptsTo(SauceLogin.login());
     }
 
 

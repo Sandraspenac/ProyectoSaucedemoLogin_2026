@@ -2,11 +2,11 @@ package com.co.choucair.stepdefinitions;
 
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
-import net.thucydides.core.webdriver.SerenityWebdriverManager;
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 
-import static java.sql.DriverManager.getDriver;
+import java.util.Objects;
 
 public class Hooks {
     @Before
@@ -15,7 +15,8 @@ public class Hooks {
     }
     @After
     public void close(){
-           getDriver().close();
+        Assert.assertNotNull(getDriver());
+        Objects.requireNonNull(getDriver()).close();
 
         }
 
